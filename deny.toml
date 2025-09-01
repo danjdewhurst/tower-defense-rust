@@ -19,9 +19,7 @@ features = []
 # know exactly what you're doing.
 exclude = []
 # If true, all dev dependencies will be skipped when creating the graph
-skip-dev = false
-# If true, all build dependencies will be skipped when creating the graph
-skip-build = false
+exclude-dev = false
 
 [output]
 # When outputting inclusion graphs in diagnostics that include features, this
@@ -37,19 +35,19 @@ db-path = "~/.cargo/advisory-db"
 # The url(s) of the advisory databases to use
 db-urls = ["https://github.com/rustsec/advisory-db"]
 # The lint level for security vulnerabilities
-vulnerability = "deny"
+# vulnerability = "deny"
 # The lint level for unmaintained crates
-unmaintained = "warn"
+# unmaintained = "warn"
 # The lint level for crates that have been yanked from their source registry
-yanked = "warn"
+# yanked = "warn"
 # The lint level for crates with security notices. Note that as of
 # 2019-12-17 there are no security notice advisories in
 # https://github.com/rustsec/advisory-db
-notice = "warn"
+# notice = "warn"
 # A list of advisory IDs to ignore. Note that ignored advisories will still
 # output a note when they are encountered.
 ignore = [
-    #"RUSTSEC-0000-0000",
+    "RUSTSEC-2024-0436", # paste crate - unmaintained but used by Bevy dependencies
 ]
 # Threshold for security vulnerabilities, any vulnerability with a CVSS score
 # lower than this threshold will be ignored. Note that ignored advisories will
@@ -59,7 +57,7 @@ ignore = [
 # * Medium - CVSS Score 4.0 - 6.9
 # * High - CVSS Score 7.0 - 8.9
 # * Critical - CVSS Score 9.0 - 10.0
-severity-threshold = 
+# severity-threshold = "none"
 
 [licenses]
 # The confidence threshold for detecting a license from a license text.
@@ -72,40 +70,43 @@ confidence-threshold = 0.8
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
 allow = [
     "MIT",
+    "MIT-0",
     "Apache-2.0",
     "Apache-2.0 WITH LLVM-exception",
     "BSD-2-Clause",
     "BSD-3-Clause",
     "ISC",
     "Unicode-DFS-2016",
+    "Unicode-3.0",
     "CC0-1.0",
+    "Zlib",
 ]
 # List of explicitly disallowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
-deny = [
-    "GPL-2.0",
-    "GPL-3.0",
-    "AGPL-1.0",
-    "AGPL-3.0",
-]
+# deny = [
+#     "GPL-2.0",
+#     "GPL-3.0",
+#     "AGPL-1.0",
+#     "AGPL-3.0",
+# ]
 # Lint level for when multiple versions of the same license are detected
-copyleft = "warn"
+# copyleft = "warn"
 # The confidence threshold for detecting a license from a license text.
 # The higher the value, the more closely the license text must match the
 # canonical license text of a valid SPDX license file.
 # [possible values: any between 0.0 and 1.0].
-default = "deny"
+# default = "deny"
 # The lint level used when no license is detected
-unlicensed = "deny"
+# unlicensed = "deny"
 # List of allowed licenses for dependencies that don't have the license field filled.
 # This is useful for allowing licenses like Apache-2.0 OR MIT which are common
 # but don't have a simple SPDX identifier.
-allow-osi-fsf-free = "both"
+# allow-osi-fsf-free = "both"
 # List of allowed licenses for dependencies that are dual licensed.
 # This is useful for allowing licenses like Apache-2.0 OR MIT which are common
 # but don't have a simple SPDX identifier.
-copyleft-compat = "warn"
+# copyleft-compat = "warn"
 
 [bans]
 # Lint level for when multiple versions of the same crate are detected

@@ -100,17 +100,17 @@ mod tests {
 
         // Test that we can match on sound types
         match shoot {
-            SoundType::Shoot => {},
+            SoundType::Shoot => {}
             _ => panic!("Should match Shoot"),
         }
 
         match death {
-            SoundType::Death => {},
+            SoundType::Death => {}
             _ => panic!("Should match Death"),
         }
 
         match hit {
-            SoundType::Hit => {},
+            SoundType::Hit => {}
             _ => panic!("Should match Hit"),
         }
     }
@@ -150,12 +150,12 @@ mod tests {
 
         // Both should work independently
         match original {
-            SoundType::Shoot => {},
+            SoundType::Shoot => {}
             _ => panic!("Original should match Shoot"),
         }
 
         match copied {
-            SoundType::Shoot => {},
+            SoundType::Shoot => {}
             _ => panic!("Copied should match Shoot"),
         }
     }
