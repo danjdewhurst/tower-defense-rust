@@ -1,6 +1,6 @@
-use bevy::prelude::*;
 use crate::components::*;
 use crate::resources::*;
+use bevy::prelude::*;
 
 pub fn update_ui(
     game_state: Res<GameState>,
@@ -10,7 +10,7 @@ pub fn update_ui(
     if let Ok(mut text) = health_text_query.get_single_mut() {
         **text = format!("Health: {}", game_state.player_health);
     }
-    
+
     if let Ok(mut text) = score_text_query.get_single_mut() {
         **text = format!("Score: {} | Money: {}", game_state.score, game_state.money);
     }

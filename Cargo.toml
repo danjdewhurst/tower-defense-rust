@@ -3,5 +3,13 @@ name = "tower-defense"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "tower-defense"
+path = "src/main.rs"
+
+[lib]
+name = "tower_defense"
+path = "src/lib.rs"
+
 [dependencies]
 bevy = { version = "0.15", features = ["default"] }

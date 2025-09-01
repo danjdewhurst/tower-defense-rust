@@ -1,11 +1,11 @@
 use bevy::prelude::*;
 
 mod components;
-mod systems;
 mod resources;
+mod systems;
 
-use systems::*;
 use resources::*;
+use systems::*;
 
 const WINDOW_WIDTH: f32 = 1024.0;
 const WINDOW_HEIGHT: f32 = 768.0;
@@ -24,17 +24,20 @@ fn main() {
         .init_resource::<GameState>()
         .init_resource::<WaveTimer>()
         .add_systems(Startup, setup)
-        .add_systems(Update, (
-            spawn_enemies,
-            move_enemies,
-            tower_shooting,
-            bullet_movement,
-            collision_system,
-            cleanup_dead_entities,
-            handle_input,
-            update_ui,
-            update_effects,
-            handle_sound_events,
-        ))
+        .add_systems(
+            Update,
+            (
+                spawn_enemies,
+                move_enemies,
+                tower_shooting,
+                bullet_movement,
+                collision_system,
+                cleanup_dead_entities,
+                handle_input,
+                update_ui,
+                update_effects,
+                handle_sound_events,
+            ),
+        )
         .run();
 }

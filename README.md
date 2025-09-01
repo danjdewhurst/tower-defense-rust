@@ -1,10 +1,13 @@
 # Tower Defense Game 🏗️⚔️
 
-A basic tower defense game built in Rust using the Bevy game engine.
+An educational tower defense game built in Rust using the Bevy game engine. This project serves as a learning resource for Rust game development patterns, testing strategies, and CI/CD workflows.
 
+[![CI](https://github.com/danjdewhurst/tower-defense-rust/workflows/CI/badge.svg)](https://github.com/danjdewhurst/tower-defense-rust/actions/workflows/ci.yml)
+[![Security Audit](https://github.com/danjdewhurst/tower-defense-rust/workflows/Security%20Audit/badge.svg)](https://github.com/danjdewhurst/tower-defense-rust/actions/workflows/security.yml)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)
 ![Bevy](https://img.shields.io/badge/bevy-0.15-green.svg)
+![Tests](https://img.shields.io/badge/tests-25%20passing-brightgreen.svg)
 
 ## Features
 
@@ -54,13 +57,57 @@ cargo run
   - `sound.rs` - Sound system using console beeps and visual indicators
 - `src/resources.rs` - Global game state and resources
 
-## Contributing
+## 📚 Educational Purpose
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This repository is designed as an **educational resource** for learning Rust game development. It demonstrates:
+
+- **ECS (Entity Component System)** patterns with Bevy
+- **Modular code architecture** with clear separation of concerns
+- **Comprehensive unit testing** with 25+ test cases covering game logic
+- **CI/CD pipelines** with automated testing, linting, and security audits
+- **Self-contained design** with no external asset dependencies
+- **Cross-platform compatibility** using standard Rust libraries
+
+### 🎯 Learning Objectives
+
+- Understanding game loops and system scheduling
+- Implementing collision detection and physics
+- Managing game state and resources
+- Creating visual effects and sound systems
+- Writing testable, maintainable game code
+- Setting up professional development workflows
+
+## 🚫 Contribution Policy
+
+**This repository does not accept external contributions.** It is maintained as an educational reference and playground for exploring Rust game development concepts. Feel free to:
+
+- ⭐ Star the repository if you find it useful
+- 🐛 Open issues to report bugs or suggest improvements
+- 🍴 Fork the repository to create your own version
+- 📝 Use the code as a reference for your own projects
+
+## 🧪 Testing
+
+The project includes comprehensive unit tests covering:
+
+```bash
+# Run all tests
+cargo test
+
+# Run with coverage information
+cargo test --verbose
+
+# Run specific test modules
+cargo test components
+cargo test systems::enemy
+```
+
+**Test Coverage:**
+- ✅ Component creation and validation (6 tests)
+- ✅ Game state management (6 tests)  
+- ✅ Enemy pathfinding and movement (8 tests)
+- ✅ Sound system functionality (5 tests)
+- ✅ Resource management and validation
 
 ## License
 
